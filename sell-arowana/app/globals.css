@@ -24,3 +24,44 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.arowana-slide {
+  animation: arowana-fade 12s infinite;
+  opacity: 0;
+  transform: translateX(24px) scale(0.98);
+}
+
+.arowana-slide:first-child {
+  opacity: 1;
+}
+
+@keyframes arowana-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(24px) scale(0.98);
+  }
+
+  8%,
+  30% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  38%,
+  100% {
+    opacity: 0;
+    transform: translateX(-24px) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arowana-slide {
+    animation: none;
+    opacity: 0;
+    transform: none;
+  }
+
+  .arowana-slide:first-child {
+    opacity: 1;
+  }
+}
